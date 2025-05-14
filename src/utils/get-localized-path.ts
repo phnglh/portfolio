@@ -1,4 +1,4 @@
-import { i18n } from "@stackhub/i18n/config";
+import { i18n } from '@stackhub/i18n/config';
 
 type LocalizedDocument = {
   slug: string;
@@ -8,7 +8,7 @@ type LocalizedDocument = {
 export const getLocalizedPath = (doc: LocalizedDocument) => {
   const locale = doc.locale;
 
-  const localePath = locale === i18n.defaultLocale ? "" : `/${locale}`;
+  const localePath = locale === i18n.defaultLocale ? '' : `/${locale}`;
 
   return `${localePath}${doc.slug}`;
 };

@@ -1,6 +1,6 @@
-import type { NextRequest } from "next/server";
+import type { NextRequest } from 'next/server';
 
-import { i18nMiddleware } from "@stackhub/i18n/middleware";
+import { i18nMiddleware } from '@stackhub/i18n/middleware';
 
 const middleware = (request: NextRequest) => {
   const csp = `
@@ -23,7 +23,7 @@ const middleware = (request: NextRequest) => {
 
   const response = i18nMiddleware(request);
 
-  response.headers.set("Content-Security-Policy", csp.replaceAll("\n", ""));
+  response.headers.set('Content-Security-Policy', csp.replaceAll('\n', ''));
 
   return response;
 };
@@ -42,7 +42,7 @@ export const config = {
    * - rss.xml
    */
   matcher: [
-    "/((?!api|_next/static|_next/image|_vercel|og|favicon|fonts|images|videos|favicon.ico|sitemap.xml|robots.txt|rss.xml).*)",
+    '/((?!api|_next/static|_next/image|_vercel|og|favicon|fonts|images|videos|favicon.ico|sitemap.xml|robots.txt|rss.xml).*)',
   ],
 };
 

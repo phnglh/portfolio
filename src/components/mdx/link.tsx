@@ -1,15 +1,15 @@
-import { Link as LocalizedLink } from "@stackhub/i18n/routing";
+import { Link as LocalizedLink } from '@stackhub/i18n/routing';
 
-type LinkProps = React.ComponentProps<"a">;
+type LinkProps = React.ComponentProps<'a'>;
 
 const Link = (props: LinkProps) => {
   const { href, children, ...rest } = props;
 
   if (!href) {
-    throw new Error("Link must have an href");
+    throw new Error('Link must have an href');
   }
 
-  if (href.startsWith("http")) {
+  if (href.startsWith('http')) {
     return (
       <a target="_blank" rel="noopener noreferrer" href={href} {...rest}>
         {children}

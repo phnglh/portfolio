@@ -1,15 +1,15 @@
-import { useTranslations } from "@stackhub/i18n/client";
-import { i18n, supportedLanguages } from "@stackhub/i18n/config";
-import { usePathname, useRouter } from "@stackhub/i18n/routing";
+import { useTranslations } from '@stackhub/i18n/client';
+import { i18n, supportedLanguages } from '@stackhub/i18n/config';
+import { usePathname, useRouter } from '@stackhub/i18n/routing';
 import {
-  Button, 
+  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@stackhub/ui";
-import { GlobeIcon } from "lucide-react";
-import { useTransition } from "react";
+} from '@stackhub/ui';
+import { GlobeIcon } from 'lucide-react';
+import { useTransition } from 'react';
 
 const LocaleSwitcher = () => {
   const t = useTranslations();
@@ -20,7 +20,7 @@ const LocaleSwitcher = () => {
         <Button
           variant="ghost"
           className="size-9 p-0"
-          aria-label={t("layout.change-language")}
+          aria-label={t('layout.change-language')}
         >
           <GlobeIcon className="size-4" />
         </Button>

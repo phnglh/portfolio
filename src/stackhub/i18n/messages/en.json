@@ -17,7 +17,16 @@
     "home": "Home",
     "skip-to-main-content": "Skip to main content",
     "til": "Til",
-    "change-language": "Change language"
+    "change-language": "Change language",
+    "about-us": "About Us",
+    "careers": "Careers",
+    "contact": "Contact",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "github": "GitHub",
+    "general": "General",
+    "social": "Social",
+    "company": "Company"
   },
   "metadata": {
     "site-description": "lorem",

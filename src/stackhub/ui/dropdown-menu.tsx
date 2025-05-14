@@ -1,6 +1,6 @@
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { cn } from "@stackhub/utils/cn";
-import { CheckIcon, ChevronRightIcon, DotIcon } from "lucide-react";
+import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import { cn } from '@stackhub/utils/cn';
+import { CheckIcon, ChevronRightIcon, DotIcon } from 'lucide-react';
 
 const DropdownMenu = DropdownMenuPrimitive.Root;
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
@@ -19,10 +19,10 @@ const DropdownMenuSubTrigger = (props: DropdownMenuSubTriggerProps) => {
   return (
     <DropdownMenuPrimitive.SubTrigger
       className={cn(
-        "outline-hidden flex cursor-default select-none items-center rounded-md px-2 py-1.5 text-sm",
-        "focus:bg-accent focus:text-accent-foreground",
-        "data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
-        inset && "pl-8",
+        'outline-hidden flex cursor-default select-none items-center rounded-md px-2 py-1.5 text-sm',
+        'focus:bg-accent focus:text-accent-foreground',
+        'data-[state=open]:bg-accent data-[state=open]:text-accent-foreground',
+        inset && 'pl-8',
         className
       )}
       {...rest}
@@ -43,13 +43,13 @@ const DropdownMenuSubContent = (props: DropdownMenuSubContentProps) => {
   return (
     <DropdownMenuPrimitive.SubContent
       className={cn(
-        "bg-popover text-popover-foreground z-50 min-w-32 overflow-hidden rounded-lg border p-1 shadow-lg",
-        "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
-        "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
-        "data-[side=top]:slide-in-from-bottom-2",
-        "data-[side=right]:slide-in-from-left-2",
-        "data-[side=bottom]:slide-in-from-top-2",
-        "data-[side=left]:slide-in-from-right-2",
+        'bg-popover text-popover-foreground z-50 min-w-32 overflow-hidden rounded-lg border p-1 shadow-lg',
+        'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',
+        'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
+        'data-[side=top]:slide-in-from-bottom-2',
+        'data-[side=right]:slide-in-from-left-2',
+        'data-[side=bottom]:slide-in-from-top-2',
+        'data-[side=left]:slide-in-from-right-2',
         className
       )}
       {...rest}
@@ -69,13 +69,13 @@ const DropdownMenuContent = (props: DropdownMenuContentProps) => {
       <DropdownMenuPrimitive.Content
         sideOffset={sideOffset}
         className={cn(
-          "bg-popover text-popover-foreground z-50 min-w-32 overflow-hidden rounded-lg border p-1 shadow-lg",
-          "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
-          "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
-          "data-[side=top]:slide-in-from-bottom-2",
-          "data-[side=right]:slide-in-from-left-2",
-          "data-[side=bottom]:slide-in-from-top-2",
-          "data-[side=left]:slide-in-from-right-2",
+          'bg-popover text-popover-foreground z-50 min-w-32 overflow-hidden rounded-lg border p-1 shadow-lg',
+          'data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95',
+          'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
+          'data-[side=top]:slide-in-from-bottom-2',
+          'data-[side=right]:slide-in-from-left-2',
+          'data-[side=bottom]:slide-in-from-top-2',
+          'data-[side=left]:slide-in-from-right-2',
           className
         )}
         {...rest}
@@ -94,10 +94,10 @@ const DropdownMenuItem = (props: DropdownMenuItemProps) => {
   return (
     <DropdownMenuPrimitive.Item
       className={cn(
-        "outline-hidden relative flex cursor-default select-none items-center rounded-md px-2 py-1.5 text-sm transition-colors",
-        "focus:bg-accent focus:text-accent-foreground",
-        "data-disabled:pointer-events-none data-disabled:opacity-50",
-        inset && "pl-8",
+        'outline-hidden relative flex cursor-default select-none items-center rounded-md px-2 py-1.5 text-sm transition-colors',
+        'focus:bg-accent focus:text-accent-foreground',
+        'data-disabled:pointer-events-none data-disabled:opacity-50',
+        inset && 'pl-8',
         className
       )}
       {...rest}
@@ -115,9 +115,9 @@ const DropdownMenuCheckboxItem = (props: DropdownMenuCheckboxItemProps) => {
   return (
     <DropdownMenuPrimitive.CheckboxItem
       className={cn(
-        "outline-hidden relative flex cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm transition-colors",
-        "focus:bg-accent focus:text-accent-foreground",
-        "data-disabled:pointer-events-none data-disabled:opacity-50",
+        'outline-hidden relative flex cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm transition-colors',
+        'focus:bg-accent focus:text-accent-foreground',
+        'data-disabled:pointer-events-none data-disabled:opacity-50',
         className
       )}
       checked={checked}
@@ -143,9 +143,9 @@ const DropdownMenuRadioItem = (props: DropdownMenuRadioItemProps) => {
   return (
     <DropdownMenuPrimitive.RadioItem
       className={cn(
-        "outline-hidden relative flex cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm transition-colors",
-        "focus:bg-accent focus:text-accent-foreground",
-        "data-disabled:pointer-events-none data-disabled:opacity-50",
+        'outline-hidden relative flex cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm transition-colors',
+        'focus:bg-accent focus:text-accent-foreground',
+        'data-disabled:pointer-events-none data-disabled:opacity-50',
         className
       )}
       {...rest}
@@ -170,8 +170,8 @@ const DropdownMenuLabel = (props: DropdownMenuLabelProps) => {
   return (
     <DropdownMenuPrimitive.Label
       className={cn(
-        "text-foreground px-2 py-1.5 text-sm font-semibold",
-        inset && "pl-8",
+        'text-foreground px-2 py-1.5 text-sm font-semibold',
+        inset && 'pl-8',
         className
       )}
       {...rest}
@@ -188,13 +188,13 @@ const DropdownMenuSeparator = (props: DropdownMenuSeparatorProps) => {
 
   return (
     <DropdownMenuPrimitive.Separator
-      className={cn("bg-border -mx-1 my-1 h-px", className)}
+      className={cn('bg-border -mx-1 my-1 h-px', className)}
       {...rest}
     />
   );
 };
 
-type DropdownMenuShortcutProps = React.ComponentProps<"span">;
+type DropdownMenuShortcutProps = React.ComponentProps<'span'>;
 
 const DropdownMenuShortcut = (props: DropdownMenuShortcutProps) => {
   const { className, ...rest } = props;
@@ -202,7 +202,7 @@ const DropdownMenuShortcut = (props: DropdownMenuShortcutProps) => {
   return (
     <span
       className={cn(
-        "text-muted-foreground ml-auto text-xs tracking-widest",
+        'text-muted-foreground ml-auto text-xs tracking-widest',
         className
       )}
       {...rest}

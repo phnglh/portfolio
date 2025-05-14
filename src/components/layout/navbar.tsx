@@ -1,45 +1,54 @@
-"use client";
+'use client';
 
-import { usePathname } from "@/stackhub/i18n/routing";
-import { useTranslations } from "@/stackhub/i18n/client";
-import { Bookmark, HouseIcon, NewspaperIcon, UserCircleIcon } from "lucide-react";
-import { cn } from "@/stackhub/utils/cn";
-import { Link as LocalizedLink } from "@stackhub/i18n/routing";
+import { usePathname } from '@/stackhub/i18n/routing';
+import { useTranslations } from '@/stackhub/i18n/client';
+import {
+  Bookmark,
+  HouseIcon,
+  NewspaperIcon,
+  UserCircleIcon,
+} from 'lucide-react';
+import { cn } from '@/stackhub/utils/cn';
+import { Link as LocalizedLink } from '@stackhub/i18n/routing';
 
 export const HEADER_LINKS = [
   {
     icon: <HouseIcon className="size-3.5" />,
-    href: "/",
-    key: "home",
+    href: '/',
+    key: 'home',
+  },
+  {
+    icon: <Bookmark className="size-3.5" />,
+    href: '/til',
+    key: 'til',
+  },
+  {
+    icon: <Bookmark className="size-3.5" />,
+    href: '/bookmark',
+    key: 'bookmark',
   },
   {
     icon: <NewspaperIcon className="size-3.5" />,
-    href: "/blog",
-    key: "blog",
+    href: '/blog',
+    key: 'blog',
   },
   {
-    icon: <Bookmark className="size-3.5"/>,
-    href: "/bookmark",
-    key: "bookmark"
-  },  
-  {
     icon: <UserCircleIcon className="size-3.5" />,
-    href: "/about",
-    key: "about",
+    href: '/about',
+    key: 'about',
   },
 ] as const;
 
-
-type LinkProps = React.ComponentProps<"a">;
+type LinkProps = React.ComponentProps<'a'>;
 
 const Link = (props: LinkProps) => {
   const { href, children, ...rest } = props;
 
   if (!href) {
-    throw new Error("Link must have an href");
+    throw new Error('Link must have an href');
   }
 
-  if (href.startsWith("http")) {
+  if (href.startsWith('http')) {
     return (
       <a target="_blank" rel="noopener noreferrer" href={href} {...rest}>
         {children}
@@ -71,10 +80,10 @@ const Navbar = () => {
             >
               <Link
                 className={cn(
-                  "rounded-sm px-3 py-2 text-sm font-medium transition-colors",
+                  'rounded-sm px-3 py-2 text-sm font-medium transition-colors',
                   {
-                    "text-muted-foreground hover:text-foreground": !isActive,
-                    "text-foreground": isActive,
+                    'text-muted-foreground hover:text-foreground': !isActive,
+                    'text-foreground': isActive,
                   }
                 )}
                 href={link.href}

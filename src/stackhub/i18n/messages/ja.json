@@ -17,7 +17,16 @@
     "home": "ホーム",
     "skip-to-main-content": "メインコンテンツへスキップ",
     "til": "今日学んだこと",
-    "change-language": "change-language"
+    "change-language": "change-language",
+    "about-us": "About Us",
+    "careers": "Careers",
+    "contact": "Contact",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "github": "GitHub",
+    "general": "General",
+    "social": "Social",
+    "company": "Company"
   },
   "metadata": {
     "site-description": "lorem",

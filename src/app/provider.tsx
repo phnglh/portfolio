@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { MDXProvider } from "@mdx-js/react";
-import { ThemeProvider } from "next-themes";
+import { MDXProvider } from '@mdx-js/react';
+import { ThemeProvider } from 'next-themes';
 type ProvidesProps = {
   children: React.ReactNode;
 };
@@ -17,10 +17,7 @@ const Providers = (props: ProvidesProps) => {
       enableColorScheme
       disableTransitionOnChange
     >
-      <MDXProvider>
-        {children}
-      </MDXProvider>
-      
+      <MDXProvider>{children}</MDXProvider>
     </ThemeProvider>
   );
 };
