@@ -1,14 +1,14 @@
-import type { Metadata, ResolvingMetadata } from "next";
-import { setRequestLocale } from "@stackhub/i18n/server";
-import { allTils } from "content-collections";
-import { notFound } from "next/navigation";
+import type { Metadata, ResolvingMetadata } from 'next';
+import { setRequestLocale } from '@stackhub/i18n/server';
+import { allTils } from 'content-collections';
+import { notFound } from 'next/navigation';
 
-import { SITE_URL } from "@/libs/constants";
-import { getLocalizedPath } from "@/utils/get-localized-path";
+import { SITE_URL } from '@/libs/constants';
+import { getLocalizedPath } from '@/utils/get-localized-path';
 
-import PageTitle from "@/components/page-title";
-import Mdx from "@/components/mdx/mdx";
-import Providers from "./provider";
+import PageTitle from '@/components/page-title';
+import Mdx from '@/components/mdx/mdx';
+import Providers from './provider';
 
 type PageProps = {
   params: Promise<{
@@ -34,9 +34,7 @@ export const generateMetadata = async (
 ): Promise<Metadata> => {
   const { slug, locale } = await props.params;
 
-  const til = allTils.find(
-    (p) => p.slug === slug && p.locale === locale
-  );
+  const til = allTils.find((p) => p.slug === slug && p.locale === locale);
 
   if (!til) return {};
 
@@ -56,7 +54,7 @@ export const generateMetadata = async (
     openGraph: {
       ...previousOpenGraph,
       url,
-      type: "article",
+      type: 'article',
       title: title,
       description: summary,
       publishedTime: ISOPublishedTime,
@@ -70,9 +68,7 @@ const Page = async (props: PageProps) => {
   const { slug, locale } = await props.params;
   setRequestLocale(locale);
 
-  const til = allTils.find(
-    (p) => p.slug === slug && p.locale === locale
-  );
+  const til = allTils.find((p) => p.slug === slug && p.locale === locale);
 
   if (!til) {
     notFound();

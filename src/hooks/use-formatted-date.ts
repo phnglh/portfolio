@@ -1,5 +1,8 @@
-import { type DateTimeFormatOptions, useFormatter } from "@stackhub/i18n/client";
-import dayjs from "dayjs";
+import {
+  type DateTimeFormatOptions,
+  useFormatter,
+} from '@stackhub/i18n/client';
+import dayjs from 'dayjs';
 
 type Options = {
   relative?: boolean;
@@ -13,19 +16,19 @@ export const useFormattedDate = (
   const {
     relative = false,
     formatOptions = {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
     },
   } = options;
 
   const format = useFormatter();
   const now = new Date();
 
-  const convertedDate = typeof date === "string" ? new Date(date) : date;
+  const convertedDate = typeof date === 'string' ? new Date(date) : date;
 
   if (relative) {
-    const weeksDiff = dayjs().diff(date, "week");
+    const weeksDiff = dayjs().diff(date, 'week');
 
     return Math.abs(weeksDiff) > 1
       ? format.dateTime(convertedDate, formatOptions)

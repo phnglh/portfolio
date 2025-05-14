@@ -1,17 +1,16 @@
 // import { SITE_URL } from "@/libs/constants";
-import { i18n } from "@/stackhub/i18n/config";
-import { getLocalizedPath } from "@/utils/get-localized-path";
-import { getTranslations, setRequestLocale } from "@stackhub/i18n/server";
-import { Metadata, ResolvingMetadata } from "next";
-import { allTils } from "content-collections";
-import TilsList from "@/components/til/list-til";
+import { i18n } from '@/stackhub/i18n/config';
+import { getLocalizedPath } from '@/utils/get-localized-path';
+import { getTranslations, setRequestLocale } from '@stackhub/i18n/server';
+import { Metadata, ResolvingMetadata } from 'next';
+import { allTils } from 'content-collections';
+import TilsList from '@/components/til/list-til';
 type PageProps = {
   params: Promise<{
     locale: string;
   }>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
-
-}
+};
 
 export const generateStaticParams = (): Array<{ locale: string }> => {
   return i18n.locales.map((locale) => ({ locale }));
@@ -23,10 +22,10 @@ export const generateMetadata = async (
 ): Promise<Metadata> => {
   const { locale } = await props.params;
   const previousOpenGraph = (await parent).openGraph ?? {};
-  const t = await getTranslations({ locale, namespace: "til" });
-  const title = t("title");
-  const description = t("description");
-  const url = getLocalizedPath({ slug: "/til", locale });
+  const t = await getTranslations({ locale, namespace: 'til' });
+  const title = t('title');
+  const description = t('description');
+  const url = getLocalizedPath({ slug: '/til', locale });
 
   return {
     title,
@@ -43,7 +42,6 @@ export const generateMetadata = async (
   };
 };
 
-
 const Page = async (props: PageProps) => {
   const { locale } = await props.params;
   setRequestLocale(locale);
@@ -58,7 +56,6 @@ const Page = async (props: PageProps) => {
     })
     .filter((til) => til.locale === locale);
 
- 
   return (
     <>
       <TilsList til={til} />

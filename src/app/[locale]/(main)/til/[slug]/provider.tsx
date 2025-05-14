@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import type { Til } from "content-collections";
+import type { Til } from 'content-collections';
 
-import { TilProvider } from "@/contexts/til";
+import { TilProvider } from '@/contexts/til';
 
 type ProvidersProps = {
   children: React.ReactNode;
