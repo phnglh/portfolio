@@ -12,28 +12,32 @@
   },
   "layout": {
     "about": "About",
+    "about-us": "About Us",
     "blog": "Blog",
     "bookmark": "Bookmark",
-    "home": "Home",
-    "skip-to-main-content": "Skip to main content",
-    "til": "Til",
-    "change-language": "Change language",
-    "about-us": "About Us",
     "careers": "Careers",
+    "change-language": "Change language",
+    "company": "Company",
     "contact": "Contact",
     "facebook": "Facebook",
-    "instagram": "Instagram",
-    "github": "GitHub",
     "general": "General",
+    "github": "GitHub",
+    "home": "Home",
+    "instagram": "Instagram",
+    "skip-to-main-content": "Skip to main content",
     "social": "Social",
-    "company": "Company"
+    "til": "Til"
+  },
+  "mdx": {
+    "link-to-section": "link-to-section"
   },
   "metadata": {
     "site-description": "lorem",
     "site-title": "Stack Hub"
   },
-  "mdx": {
-    "link-to-section": "link-to-section"
-  },
-  "not-found": "Page Not Found!"
+  "not-found": "Page Not Found!",
+  "til": {
+    "description": "A log of small wins and technical insights — quick notes from real-world development.",
+    "title": "Today I Learn"
+  }
 }

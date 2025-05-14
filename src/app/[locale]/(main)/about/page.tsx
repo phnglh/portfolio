@@ -28,7 +28,7 @@ export default async function About(props: PageProps) {
   const title = page?.title ?? t('about.title');
   const description = page?.summary ?? t('about.description');
   const url = `${SITE_URL}${getLocalizedPath({ slug: '/about', locale })}`;
-  console.log(title, description, url);
+
   return (
     <>
       <PageTitle title={title} description={description} />

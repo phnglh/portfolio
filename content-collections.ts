@@ -37,6 +37,22 @@ const pages = defineCollection({
 });
 
 
+const tils = defineCollection({
+  name: "til",
+  directory: "src/content/til",
+  include: "**/*.mdx",
+  schema: (z) => ({
+    title: z.string(),
+    date: z.string(),
+    modifiedTime: z.string(),
+    summary: z.string(),
+    imageUrl: z.string().optional(),
+    tags: z.array(z.string()),
+  }),
+  transform,
+});
+
+
 export default defineConfig({
-  collections: [pages],
+  collections: [pages,tils],
 });
