@@ -41,6 +41,7 @@ const notoSansJP = Noto_Sans_JP({
     const { locale } = await props.params;
     const t = await getTranslations({ locale, namespace: "metadata" });
   return {
+      metadataBase: new URL('https://localhost:3000'),
       title: {
         default: t("site-title"),
         template: `%s | ${t("site-title")}`,
