@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
-
+import { withContentCollections } from "@content-collections/next"
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["localhost"],
   eslint: {
@@ -13,4 +13,4 @@ const nextConfig: NextConfig = {
 
 const withNextIntl = createNextIntlPlugin();
 
-export default withNextIntl(nextConfig);
+export default withContentCollections(withNextIntl(nextConfig))

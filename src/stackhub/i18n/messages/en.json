@@ -1,24 +1,30 @@
 {
+  "common": {
+    "cancel": "Cancel"
+  },
+  "error": {
+    "something-went-wrong": "Something went wrong!",
+    "try-again": "Try again"
+  },
   "homepage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "about": "Go to the about page",
+    "title": "Hello world!"
   },
   "layout": {
-		"home": "Home",
-		"blog": "Blog",
-		"bookmark": "Bookmark",
-		"about": "About",
-		"skip-to-main-content": "Skip to main content"
-	},
-  "not-found": "Page Not Found!",
-	"metadata": {
-		"site-description": "lorem",
-		"site-title": "Stack Hub"
-	},
-  "common": {
-"cancel": "Cancel"
-  },"error": {
-		"something-went-wrong": "Something went wrong!",
-		"try-again": "Try again"
-	}
+    "about": "About",
+    "blog": "Blog",
+    "bookmark": "Bookmark",
+    "home": "Home",
+    "skip-to-main-content": "Skip to main content",
+    "til": "Til",
+    "change-language": "Change language"
+  },
+  "metadata": {
+    "site-description": "lorem",
+    "site-title": "Stack Hub"
+  },
+  "mdx": {
+    "link-to-section": "link-to-section"
+  },
+  "not-found": "Page Not Found!"
 }

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import Link from "next/link";
 import { animate } from "animejs";
+import LocaleSwitcher from "./locale-switcher";
 export default function Headers() {
   const t = useTranslations()
   const [isScrolled, setIsScrolled] = useState(false);
@@ -68,6 +69,7 @@ export default function Headers() {
       </Link>
       <div className="flex items-center gap-2">
         <Navbar/>
+        <LocaleSwitcher/>
       </div>
     </motion.header>
   )

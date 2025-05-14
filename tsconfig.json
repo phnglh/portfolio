@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@stackhub/*": ["./src/stackhub/*"]
+      "@stackhub/*": ["./src/stackhub/*"],
+      "content-collections": ["./.content-collections/generated"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

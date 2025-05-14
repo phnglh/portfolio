@@ -58,7 +58,40 @@ const notoSansJP = Noto_Sans_JP({
         siteName: t("site-title"),
         description: t("site-description"),
         locale,
-      }
+        images: [
+        {
+          url: "/images/og.jpg",
+          width: 1200,
+          height: 630,
+          alt: t("site-description"),
+          type: "image/jpeg",
+        },
+      ],
+      }, icons: {
+      icon: "/favicon/favicon.svg",
+      shortcut: "/favicon/favicon.svg",
+      apple: [
+        {
+          url: "/favicon/apple-touch-icon.png",
+          sizes: "180x180",
+          type: "image/png",
+        },
+      ],
+      other: [
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          url: "/favicon/favicon-16x16.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          url: "/favicon/favicon-32x32.png",
+        },
+      ],
+    },
     };
   };
 
