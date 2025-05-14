@@ -5,11 +5,23 @@ import {useTranslations} from "@stackhub/i18n/client"
 import { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import Link from "next/link";
+import { animate } from "animejs";
 export default function Headers() {
   const t = useTranslations()
   const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
+      animate('span', {
+  y: [
+    { to: "20px", ease: 'outExpo', duration: 600 },
+    { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+  ],
+  delay: (_, i) => i * 50, 
+  ease: 'inOutCirc',
+  loopDelay: 1000,
+  loop: true
+});
+
     const changeBackground = () => {
       if (window.scrollY > 100) {
         setIsScrolled(true);
@@ -22,6 +34,7 @@ export default function Headers() {
 
     return () => document.removeEventListener("scroll", changeBackground);
   }, []);
+  
   return (
     <motion.header
       className={cn(
@@ -49,7 +62,9 @@ export default function Headers() {
         className="flex items-center justify-center gap-1"
         aria-label={t("layout.home")}
       >
-        <span className="w-7 h-7">Henry</span>
+  {["H", "e", "n", "r", "y"].map((char, index) => (
+    <span  className="" key={index} >{char}</span>
+  ))}
       </Link>
       <div className="flex items-center gap-2">
         <Navbar/>
