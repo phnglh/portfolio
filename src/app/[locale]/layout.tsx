@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Noto_Sans, Noto_Sans_JP, Noto_Sans_Mono } from 'next/font/google';
+import { Noto_Sans, Noto_Sans_Mono } from 'next/font/google';
 import '@/styles/globals.css';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import Providers from '@/app/provider';

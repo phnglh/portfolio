@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Headers from './header';
 import Footer from './footer';
 
@@ -16,14 +15,6 @@ const MainLayout = (props: MainLayoutProps) => {
         {children}
       </main>
       <Footer />
-      <Image
-        src="/images/gradient-background-top.png"
-        width={1512}
-        height={550}
-        alt="Gradient background top"
-        priority
-        className="absolute left-1/2 top-0 -z-10 -translate-x-1/2"
-      />
     </>
   );
 };
