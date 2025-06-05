@@ -8,7 +8,17 @@
   },
   "homepage": {
     "about": "Đi đến trang giới thiệu",
-    "title": "Xin chào thế giới!"
+    "title": "Xin chào thế giới!",
+    "intro": {
+			"fast": "Fast",
+			"scalable": "Scalable",
+			"maintainable": "Maintainable",
+			"stunning": "Stunning",
+			"title-bottom": "with cutting-edge tech.",
+			"title-middle-left": "building",
+			"title-middle-right": "web solutions",
+			"title-top": "My name is <em>Le Hong Phong</em>."
+		}
   },
   "layout": {
     "about": "Giới thiệu",
@@ -35,5 +45,13 @@
   "not-found": "Không tìm thấy trang!",
   "mdx": {
     "link-to-section": "link-to-section"
-  }
+  },
+   "theme-toggle": {
+		"options": {
+			"dark": "Dark",
+			"light": "Light",
+			"system": "System"
+		},
+		"toggle-theme": "Toggle theme"
+	}
 }

@@ -68,15 +68,18 @@ export default function Intro() {
       <div id="hero" className="min-h-96 pt-16 [&>canvas]:pointer-events-none">
         <div className="@container w-full flex">
           <div className="flex gap-14 items-center flex-col @xl:flex-row">
-            <motion.div className="group select-none mr-10"   initial={{
-            scale: 0,
-          }}
-          animate={{
-            scale: 1,
-          }}
-          transition={{
-            duration: 0.3,
-          }} >
+            <motion.div
+              className="group select-none mr-10"
+              initial={{
+                scale: 0,
+              }}
+              animate={{
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.3,
+              }}
+            >
               <img
                 src="/me/look.jpg"
                 alt="Look like this"
@@ -87,6 +90,10 @@ export default function Intro() {
               <h2 className="text-3xl italic">Hello,</h2>
               <p className="text-2xl ">
                 My name is <em>Phong "Henry" Le Hong</em>.
+                <br />
+                <span className="text-primary/60">
+                  Man proposes god deposes
+                </span>
               </p>
             </div>
             <div className="max-w-2xl hidden lg:block">
@@ -106,7 +113,7 @@ export default function Intro() {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ ease: 'easeOut' }}
                 className="flex gap-2 text-4xl "
-                 layout="position"
+                layout="position"
               >
                 <motion.h2
                   layout

@@ -37,3 +37,12 @@ export const useFormattedDate = (
 
   return format.dateTime(convertedDate, formatOptions);
 };
+
+export function formatDatePure(date: Date | string, locale = 'en') {
+  const convertedDate = typeof date === 'string' ? new Date(date) : date;
+  return new Intl.DateTimeFormat(locale, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }).format(convertedDate);
+}

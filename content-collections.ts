@@ -68,6 +68,21 @@ const note = defineCollection({
   transform,
 });
 
+const blog = defineCollection({
+  name: "blog",
+  directory: "src/content/blog",
+  include: "**/*.mdx",
+  schema: (z) => ({
+    title: z.string(),
+    date: z.string(),
+    modifiedTime: z.string(),
+    summary: z.string(),
+    imageUrl: z.string().optional(),
+    tags: z.array(z.string()),
+  }),
+  transform,
+});
+
 export default defineConfig({
-  collections: [pages,til,note],
+  collections: [pages,til,note, blog],
 });

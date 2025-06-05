@@ -1,10 +1,12 @@
-// import { SITE_URL } from "@/libs/constants";
 import { i18n } from '@/stackhub/i18n/config';
 import { getLocalizedPath } from '@/utils/get-localized-path';
 import { getTranslations, setRequestLocale } from '@stackhub/i18n/server';
 import { Metadata, ResolvingMetadata } from 'next';
 import { allTils } from 'content-collections';
 import TilList from '@/components/til/list-til';
+import { SITE_NAME, SITE_URL } from '@/libs/constants';
+import { Blog, BlogPosting, WithContext } from 'schema-dts';
+
 type PageProps = {
   params: Promise<{
     locale: string;
@@ -45,10 +47,10 @@ export const generateMetadata = async (
 const Page = async (props: PageProps) => {
   const { locale } = await props.params;
   setRequestLocale(locale);
-  // const t = await getTranslations("til");
-  // const title = t("title");
-  // const description = t("description");
-  // const url = `${SITE_URL}${getLocalizedPath({ slug: "/blog", locale })}`;
+  const t = await getTranslations('til');
+  const title = t('title');
+  const description = t('description');
+  const url = `${SITE_URL}${getLocalizedPath({ slug: '/blog', locale })}`;
 
   const til = allTils
     .toSorted((a, b) => {
@@ -56,8 +58,38 @@ const Page = async (props: PageProps) => {
     })
     .filter((til) => til.locale === locale);
 
+  const jsonLd: WithContext<Blog> = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    '@id': url,
+    name: title,
+    description,
+    url,
+    author: {
+      '@type': 'Person',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    blogPost: til.map<BlogPosting>((item) => ({
+      '@type': 'BlogPosting',
+      headline: item.title,
+      url: `${url}/${item.slug}`,
+      datePublished: item.date,
+      dateModified: item.modifiedTime || item.date,
+      author: {
+        '@type': 'Person',
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <TilList til={til} />
     </>
   );

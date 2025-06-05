@@ -5,7 +5,6 @@ import { useTranslations } from '@stackhub/i18n/client';
 import { useEffect, useState } from 'react';
 import Navbar from './navbar';
 import Link from 'next/link';
-import { animate } from 'animejs';
 import LocaleSwitcher from './locale-switcher';
 import { Logo } from '@/stackhub/ui/logo';
 import ThemeSwitcher from './theme-switcher';
@@ -14,17 +13,6 @@ export default function Headers() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    animate('.logo-letter', {
-      y: [
-        { to: '20px', ease: 'outExpo', duration: 600 },
-        { to: 0, ease: 'outBounce', duration: 800, delay: 100 },
-      ],
-      delay: (_, i) => i * 50,
-      ease: 'inOutCirc',
-      loopDelay: 1000,
-      loop: true,
-    });
-
     const changeBackground = () => {
       if (window.scrollY > 100) {
         setIsScrolled(true);
