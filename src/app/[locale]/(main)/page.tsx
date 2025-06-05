@@ -21,10 +21,36 @@ export const generateStaticParams = (): Array<{ locale: string }> => {
 
 export const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   const { locale } = await props.params;
+  const t = await getTranslations("metadata");
 
   return {
+    title: t("site-title"),
+    description: t("site-description"),
+    keywords: SITE_KEYWORDS.join(", "),
     alternates: {
-      canonical: getLocalizedPath({ slug: "", locale }),
+      canonical: `${SITE_URL}${getLocalizedPath({ slug: "", locale })}`,
+    },
+    openGraph: {
+      title: t("site-title"),
+      description: t("site-description"),
+      url: `${SITE_URL}${getLocalizedPath({ slug: "", locale })}`,
+      siteName: SITE_NAME,
+      locale,
+      type: "website",
+      images: [
+        {
+          url: `${SITE_URL}/images/og.jpg`, 
+          width: 1200,
+          height: 630,
+          alt: t("site-title"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("site-title"),
+      description: t("site-description"),
+      images: [`${SITE_URL}/og-image.png`],
     },
   };
 };

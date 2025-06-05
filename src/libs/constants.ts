@@ -1,12 +1,12 @@
 export const isProduction = process.env.NODE_ENV === 'production';
 
 export const SITE_URL = isProduction
-  ? 'https://localhost:3000'
-  : 'https://local.site.com';
+  ? 'https://phnglh.bio'    
+  : 'http://localhost:3000';
 
 export const GITHUB_USERNAME = 'phnglh';
 
-export const SITE_NAME = 'Noname';
+export const SITE_NAME = 'phnglh.bio';
 export const SITE_DESCRIPTION = 'A personal Next.js.';
 export const SITE_KEYWORDS = ['Next.js', 'React', 'TypeScript', 'Node.js'];
 
