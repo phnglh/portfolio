@@ -5,12 +5,8 @@ export const supportedLanguages = [
     default: true,
   },
   {
-    code: 'ja',
-    label: '日本語',
-  },
-  {
     code: 'vi',
-    label: 'Tiếng Việt',
+    label: 'Vietnamese',
   },
 ];
 export const i18n = {
