@@ -5,12 +5,10 @@ import { useTranslations } from '@stackhub/i18n/client';
 import { useFormattedDate } from '@/hooks/use-formatted-date';
 import ClickToReveal from './click-to-reveal';
 
-// Props cho component danh sách
-type TilsListProps = {
+type TilListProps = {
   til: Til[];
 };
 
-// Component hiển thị từng bài TIL
 const TilCard = ({ slug, title, date, locale }: Til) => {
   const formattedDate = useFormattedDate(date);
 
@@ -24,8 +22,7 @@ const TilCard = ({ slug, title, date, locale }: Til) => {
   );
 };
 
-// Component chính
-const TilsList = ({ til }: TilsListProps) => {
+const TilList = ({ til }: TilListProps) => {
   const t = useTranslations();
 
   const groupByTag = til.reduce(
@@ -93,4 +90,4 @@ const TilsList = ({ til }: TilsListProps) => {
   );
 };
 
-export default TilsList;
+export default TilList;

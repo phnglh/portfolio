@@ -4,7 +4,7 @@ import { getLocalizedPath } from '@/utils/get-localized-path';
 import { getTranslations, setRequestLocale } from '@stackhub/i18n/server';
 import { Metadata, ResolvingMetadata } from 'next';
 import { allTils } from 'content-collections';
-import TilsList from '@/components/til/list-til';
+import TilList from '@/components/til/list-til';
 type PageProps = {
   params: Promise<{
     locale: string;
@@ -58,7 +58,7 @@ const Page = async (props: PageProps) => {
 
   return (
     <>
-      <TilsList til={til} />
+      <TilList til={til} />
     </>
   );
 };
