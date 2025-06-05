@@ -22,7 +22,7 @@ const useLogoSrc = (props?: { theme?: 'light' | 'dark' }) => {
       ? props?.theme === 'dark'
       : theme === 'dark' || !theme;
     setSrc(
-      isDark ? '/favicon/favicon-96x96.png' : '/favicon/favicon-96x96.png'
+      isDark ? '/favicon/favicon-96x96.png' : '/favicon/favicon-black.png'
     );
   }, [props?.theme, theme]);
 
