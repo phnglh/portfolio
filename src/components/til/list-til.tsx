@@ -50,7 +50,7 @@ const TilList = ({ til }: TilListProps) => {
           I told my friend I was reading a book on anti-gravity.
         </h1>
         <p>
-          <ClickToReveal>He said, “That’s impossible!”</ClickToReveal>.
+          <ClickToReveal>He said, “That’s impossible!”</ClickToReveal>
         </p>
         <p>
           <ClickToReveal>
