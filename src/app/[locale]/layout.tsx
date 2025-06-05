@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Noto_Sans, Noto_Sans_Mono } from 'next/font/google';
+import { Space_Grotesk } from 'next/font/google';
 import '@/styles/globals.css';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import Providers from '@/app/provider';
@@ -11,16 +11,16 @@ import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/stackhub/i18n/routing';
 import { getTranslations } from '@stackhub/i18n/server';
 
-const notoSans = Noto_Sans({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-noto-sans',
+  variable: '--font-space-grotesk',
   weight: ['400', '700'],
   display: 'swap',
 });
 
-const notoSansMono = Noto_Sans_Mono({
+const spaceGroteskMono = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-noto-sans-mono',
+  variable: '--font-space-grotesk-mono',
   weight: ['400', '700'],
   display: 'swap',
 });
@@ -111,7 +111,7 @@ const Layout = async (props: LayoutProps) => {
   return (
     <html
       lang={locale}
-      className={cn(notoSans.variable, notoSansMono.variable)}
+      className={cn(spaceGrotesk.variable, spaceGroteskMono.variable)}
       suppressHydrationWarning
     >
       <body className="relative flex min-h-screen flex-col">
