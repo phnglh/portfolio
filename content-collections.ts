@@ -48,6 +48,9 @@ const til = defineCollection({
     summary: z.string(),
     imageUrl: z.string().optional(),
     tags: z.array(z.string()),
+    illustration: z.string().optional(),
+    color: z.string().optional(),
+    excerpt:z.string().optional(), 
   }),
   transform,
 });
@@ -64,6 +67,9 @@ const note = defineCollection({
     summary: z.string(),
     imageUrl: z.string().optional(),
     tags: z.array(z.string()),
+    illustration: z.string().optional(),
+    color: z.string().optional(),
+    excerpt:z.string().optional(), 
   }),
   transform,
 });
@@ -79,6 +85,9 @@ const blog = defineCollection({
     summary: z.string(),
     imageUrl: z.string().optional(),
     tags: z.array(z.string()),
+    illustration: z.string().optional(),
+    color: z.string().optional(),
+    excerpt:z.string().optional(), 
   }),
   transform,
 });

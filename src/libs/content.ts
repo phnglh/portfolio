@@ -1,21 +1,26 @@
-import { allTils, allNotes } from 'content-collections';
+import { allTils, allNotes,allBlogs } from 'content-collections';
 
 type PostType = 'til' | 'note' | 'blog';
 
-type Post = ((typeof allTils)[number] | (typeof allNotes)[number]) & {
+export type Post = ((typeof allTils)[number] | (typeof allNotes)[number] | (typeof allBlogs)[number]) & {
   type: PostType;
 };
 
-export function getAllPosts(): Post[] {
-  const tilPosts = allTils.map((post) => ({ ...post, type: 'til' as const }));
-  const notePosts = allNotes.map((post) => ({
-    ...post,
-    type: 'note' as const,
-  }));
+export function getAllPosts(locale: string): Post[] {
+  const tilPosts = allTils
+    .filter((post) => post.locale === locale)
+    .map((post) => ({ ...post, type: 'til' as const }));
+const blogPosts = allBlogs
+    .filter((post) => post.locale === locale)
+    .map((post) => ({ ...post, type: 'blog' as const }));
 
-  return [...tilPosts, ...notePosts].sort((a, b) => {
+  const notePosts = allNotes
+    .filter((post) => post.locale === locale)
+    .map((post) => ({ ...post, type: 'note' as const }));
+
+  return [...tilPosts, ...notePosts, ...blogPosts].sort((a, b) => {
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
-    return dateB.getTime() - dateA.getTime();
+    return dateB.getTime() - dateA.getTime(); 
   });
 }

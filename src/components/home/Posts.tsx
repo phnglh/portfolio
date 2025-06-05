@@ -1,9 +1,15 @@
 import { getAllPosts } from '@/libs/content';
+import PostLatest from './PostLatest';
+import PostHighlight from './PostHighlight';
 
-export default async function Posts() {
-  const allPosts = getAllPosts();
+ 
+type PostProps = {
+ locale: string
+};
 
-  console.log(allPosts);
+export default async function Posts({locale}: PostProps) {
+  const allPosts = getAllPosts(locale);
+  const content = allPosts.filter((entry) => Boolean(entry.illustration));
   return (
     <div className="space-y-12">
       <div className="space-y-4">
@@ -11,12 +17,12 @@ export default async function Posts() {
           <em>Journey</em> Diary
         </h3>
         <p className="text-subtle">The things I think</p>
-        {/* <PostHighlight posts={content} /> */}
+        <PostHighlight posts={content} />
       </div>
 
       <div className="space-y-4">
         <h3 className="text-2xl font-instrument-serif">All Posts</h3>
-        {/* <PostLatest posts={allPosts} /> */}
+        <PostLatest posts={allPosts} />
       </div>
     </div>
   );

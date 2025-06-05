@@ -66,7 +66,7 @@ const { locale } = await props.params;
       />
       <Intro />
       <div className="container px-3 py-16 relative">
-        <Posts />
+        <Posts locale={locale}/>
       </div>
     </>
   );

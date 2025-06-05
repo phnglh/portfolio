@@ -1,9 +1,11 @@
 import { formatDatePure } from '@/hooks/use-formatted-date';
+import { SITE_NAME, SITE_URL } from '@/libs/constants';
 import { i18n } from '@/stackhub/i18n/config';
 import { getLocalizedPath } from '@/utils/get-localized-path';
 import { allBlogs } from 'content-collections';
 import { Metadata, ResolvingMetadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { WithContext, Blog } from 'schema-dts';
 
 type PageProps = {
   params: Promise<{
@@ -45,10 +47,10 @@ export const generateMetadata = async (
 const Page = async (props: PageProps) => {
   const { locale } = await props.params;
   setRequestLocale(locale);
-  // const t = await getTranslations("til");
-  // const title = t("title");
-  // const description = t("description");
-  // const url = `${SITE_URL}${getLocalizedPath({ slug: "/blog", locale })}`;
+  const t = await getTranslations("til");
+  const title = t("title");
+  const description = t("description");
+  const url = `${SITE_URL}${getLocalizedPath({ slug: "/blog", locale })}`;
 
   const blogs = allBlogs
     .toSorted((a, b) => {
@@ -56,9 +58,33 @@ const Page = async (props: PageProps) => {
     })
     .filter((blog) => blog.locale === locale);
 
-  console.log(blogs);
-
+      const jsonLd: WithContext<Blog> = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": url,
+    name: title,
+    description,
+    url,
+    author: {
+      "@type": "Person",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    blogPost: allBlogs.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      url: `${url}/${post.slug}`,
+      datePublished: post.date,
+      dateModified: post.modifiedTime,
+    })),
+  };
   return (
+  <>
+   <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div className="container px-3">
       <div className="py-6">
         <h1 className="text-2xl">
@@ -80,6 +106,7 @@ const Page = async (props: PageProps) => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 
