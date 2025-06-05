@@ -42,7 +42,7 @@ export const config = {
    * - rss.xml
    */
   matcher: [
-    '/((?!api|_next/static|_next/image|_vercel|og|favicon|fonts|images|videos|favicon.ico|sitemap.xml|robots.txt|rss.xml).*)',
+    '/((?!api|_next/static|_next/image|_vercel|og|favicon|fonts|images|me|videos|favicon.ico|sitemap.xml|robots.txt|rss.xml).*)',
   ],
 };
 

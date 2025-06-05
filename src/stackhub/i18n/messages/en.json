@@ -8,7 +8,17 @@
   },
   "homepage": {
     "about": "Go to the about page",
-    "title": "Hello world!"
+    "title": "Hello world!",
+    "intro": {
+			"fast": "Fast",
+			"scalable": "Scalable",
+			"maintainable": "Maintainable",
+			"stunning": "Stunning",
+			"title-bottom": "with cutting-edge tech.",
+			"title-middle-left": "building",
+			"title-middle-right": "web solutions",
+			"title-top": "My name is <em>Le Hong Phong</em>."
+		}
   },
   "layout": {
     "about": "About",
@@ -39,5 +49,13 @@
   "til": {
     "description": "A log of small wins and technical insights — quick notes from real-world development.",
     "title": "Today I Learn"
-  }
+  },
+  "theme-toggle": {
+		"options": {
+			"dark": "Dark",
+			"light": "Light",
+			"system": "System"
+		},
+		"toggle-theme": "Toggle theme"
+	}
 }

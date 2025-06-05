@@ -7,6 +7,8 @@ import Navbar from './navbar';
 import Link from 'next/link';
 import { animate } from 'animejs';
 import LocaleSwitcher from './locale-switcher';
+import { Logo } from '@/stackhub/ui/logo';
+import ThemeSwitcher from './theme-switcher';
 export default function Headers() {
   const t = useTranslations();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,14 +65,11 @@ export default function Headers() {
         className="flex items-center justify-center gap-1"
         aria-label={t('layout.home')}
       >
-        {['H', 'e', 'n', 'r', 'y'].map((char, index) => (
-          <span className="logo-letter" key={index}>
-            {char}
-          </span>
-        ))}
+        <Logo width={28} height={28} />
       </Link>
       <div className="flex items-center gap-2">
         <Navbar />
+        <ThemeSwitcher />
         <LocaleSwitcher />
       </div>
     </motion.header>

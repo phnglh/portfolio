@@ -25,7 +25,7 @@ const transform = async <D extends Doc>(document: D, context: Context) => {
 };
 
 const pages = defineCollection({
-  name: "Page",
+  name: "page",
   directory: "src/content/pages",
   include: "**/*.mdx",
   schema: (z) => ({
@@ -37,7 +37,7 @@ const pages = defineCollection({
 });
 
 
-const tils = defineCollection({
+const til = defineCollection({
   name: "til",
   directory: "src/content/til",
   include: "**/*.mdx",
@@ -53,6 +53,21 @@ const tils = defineCollection({
 });
 
 
+const note = defineCollection({
+  name: "note",
+  directory: "src/content/note",
+  include: "**/*.mdx",
+  schema: (z) => ({
+    title: z.string(),
+    date: z.string(),
+    modifiedTime: z.string(),
+    summary: z.string(),
+    imageUrl: z.string().optional(),
+    tags: z.array(z.string()),
+  }),
+  transform,
+});
+
 export default defineConfig({
-  collections: [pages,tils],
+  collections: [pages,til,note],
 });
