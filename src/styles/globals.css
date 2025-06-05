@@ -11,8 +11,8 @@
 
   --shadow-feature-card: var(--feature-card);
 
-  --font-sans: var(--font-noto-sans);
-  --font-mono: var(--font-noto-sans-mono);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-space-grotesk-mono);
 }
 
 @layer base {
