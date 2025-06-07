@@ -88,7 +88,7 @@ export default function Intro() {
             </motion.div>
             <div className="max-w-2xl lg:hidden">
               <h2 className="text-3xl italic">Hello,</h2>
-              <p className="text-2xl ">
+              <p className="text-xl ">
                 My name is <em>Phong "Henry" Le Hong</em>.
                 <br />
                 <span className="text-primary/60">
