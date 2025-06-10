@@ -3,8 +3,14 @@ import { i18n } from '@/stackhub/i18n/config';
 import { allPages } from 'content-collections';
 import { getTranslations, setRequestLocale } from '@stackhub/i18n/server';
 import { getLocalizedPath } from '@/utils/get-localized-path';
-import { SITE_URL } from '@/libs/constants';
+import {
+  SITE_FACEBOOK_URL,
+  SITE_GITHUB_URL,
+  SITE_INSTAGRAM_URL,
+  SITE_URL,
+} from '@/libs/constants';
 import Mdx from '@/components/mdx/mdx';
+import { AboutPage, WithContext } from 'schema-dts';
 
 type PageProps = {
   params: Promise<{
@@ -29,8 +35,28 @@ export default async function About(props: PageProps) {
   const description = page?.summary ?? t('about.description');
   const url = `${SITE_URL}${getLocalizedPath({ slug: '/about', locale })}`;
 
+  const jsonLd: WithContext<AboutPage> = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: title,
+    description,
+    url,
+    mainEntity: {
+      '@type': 'Person',
+      name: title,
+      description,
+      url: SITE_URL,
+      sameAs: [SITE_FACEBOOK_URL, SITE_INSTAGRAM_URL, SITE_GITHUB_URL],
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <PageTitle title={title} description={description} />
       {!!page?.code && <Mdx code={page.code} />}
     </>

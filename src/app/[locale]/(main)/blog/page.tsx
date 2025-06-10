@@ -47,10 +47,10 @@ export const generateMetadata = async (
 const Page = async (props: PageProps) => {
   const { locale } = await props.params;
   setRequestLocale(locale);
-  const t = await getTranslations("til");
-  const title = t("title");
-  const description = t("description");
-  const url = `${SITE_URL}${getLocalizedPath({ slug: "/blog", locale })}`;
+  const t = await getTranslations('til');
+  const title = t('title');
+  const description = t('description');
+  const url = `${SITE_URL}${getLocalizedPath({ slug: '/blog', locale })}`;
 
   const blogs = allBlogs
     .toSorted((a, b) => {
@@ -58,20 +58,20 @@ const Page = async (props: PageProps) => {
     })
     .filter((blog) => blog.locale === locale);
 
-      const jsonLd: WithContext<Blog> = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "@id": url,
+  const jsonLd: WithContext<Blog> = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    '@id': url,
     name: title,
     description,
     url,
     author: {
-      "@type": "Person",
+      '@type': 'Person',
       name: SITE_NAME,
       url: SITE_URL,
     },
     blogPost: allBlogs.map((post) => ({
-      "@type": "BlogPosting",
+      '@type': 'BlogPosting',
       headline: post.title,
       url: `${url}/${post.slug}`,
       datePublished: post.date,
@@ -79,33 +79,33 @@ const Page = async (props: PageProps) => {
     })),
   };
   return (
-  <>
-   <script
+    <>
+      <script
         type="application/ld+json"
         // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    <div className="container px-3">
-      <div className="py-6">
-        <h1 className="text-2xl">
-          The <em>things</em> I think...
-        </h1>
-      </div>
+      <div className="container px-3">
+        <div className="py-6">
+          <h1 className="text-2xl">
+            The <em>things</em> I think...
+          </h1>
+        </div>
 
-      <ul>
-        {blogs.map((blog) => (
-          <li className="py-4" key={blog.slug}>
-            <span className="text-primary/60 text-xs">
-              {formatDatePure(blog.date)}
-            </span>
-            <h2 className="text-2xl font-serif font-medium">
-              <a href={`/blog/${blog.slug}`}>{blog.title}</a>
-            </h2>
-            <p className="text-primary/60">{blog.summary}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+        <ul>
+          {blogs.map((blog) => (
+            <li className="py-4" key={blog.slug}>
+              <span className="text-primary/60 text-xs">
+                {formatDatePure(blog.date)}
+              </span>
+              <h2 className="text-2xl font-serif font-medium">
+                <a href={`/blog/${blog.slug}`}>{blog.title}</a>
+              </h2>
+              <p className="text-primary/60">{blog.summary}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 };

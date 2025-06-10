@@ -1,5 +1,5 @@
-import { formatDatePure } from "@/hooks/use-formatted-date";
-import { Post } from "@/libs/content";
+import { formatDatePure } from '@/hooks/use-formatted-date';
+import { Post } from '@/libs/content';
 
 type PostLatestProps = {
   posts: Array<Post>;
@@ -12,7 +12,7 @@ export default function PostLatest({ posts }: PostLatestProps) {
       acc[year] = [...(acc[year] || []), post];
       return acc;
     },
-    {} as Record<string, Array<Post>>,
+    {} as Record<string, Array<Post>>
   );
 
   const sortedByYear = Object.entries(groupedByYear).sort((a, b) => {
@@ -33,7 +33,9 @@ export default function PostLatest({ posts }: PostLatestProps) {
             {posts.map((entry) => (
               <li className="border-b border-border pb-4" key={entry.slug}>
                 <a href={`/${entry.type}/${entry.slug}`}>
-                  <span className="text-subtle text-sm">{formatDatePure(entry.date)} —</span>
+                  <span className="text-subtle text-sm">
+                    {formatDatePure(entry.date)} —
+                  </span>
                   <span className="text-subtle text-sm">
                     {entry.type}
                     <span className="hidden md:inline"> —</span>

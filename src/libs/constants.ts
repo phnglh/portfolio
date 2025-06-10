@@ -1,7 +1,7 @@
 export const isProduction = process.env.NODE_ENV === 'production';
 
 export const SITE_URL = isProduction
-  ? 'https://phnglh.bio'    
+  ? 'https://phnglh.bio'
   : 'http://localhost:3000';
 
 export const GITHUB_USERNAME = 'phnglh';

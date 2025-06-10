@@ -2,12 +2,11 @@ import { getAllPosts } from '@/libs/content';
 import PostLatest from './PostLatest';
 import PostHighlight from './PostHighlight';
 
- 
 type PostProps = {
- locale: string
+  locale: string;
 };
 
-export default async function Posts({locale}: PostProps) {
+export default async function Posts({ locale }: PostProps) {
   const allPosts = getAllPosts(locale);
   const content = allPosts.filter((entry) => Boolean(entry.illustration));
   return (
