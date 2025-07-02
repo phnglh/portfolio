@@ -33,6 +33,9 @@ export default async function About(props: PageProps) {
   const page = getPageMdx(locale);
   const title = page?.title ?? t('about.title');
   const description = page?.summary ?? t('about.description');
+  const tags = page?.tags
+  const extra = page?.extra
+  const hobbies = page?.hobbies
   const url = `${SITE_URL}${getLocalizedPath({ slug: '/about', locale })}`;
 
   const jsonLd: WithContext<AboutPage> = {
@@ -57,8 +60,8 @@ export default async function About(props: PageProps) {
         // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <PageTitle title={title} description={description} />
+      <PageTitle title={title} description={description} hobbies={hobbies} tags={tags} extra={extra}/>
       {!!page?.code && <Mdx code={page.code} />}
     </>
-  );
+  );  
 }

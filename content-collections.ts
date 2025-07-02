@@ -32,6 +32,10 @@ const pages = defineCollection({
     title: z.string(),
     summary: z.string(),
     imageUrl: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    date: z.string().optional(), 
+    extra: z.string().optional(), 
+    hobbies: z.string().optional()
   }),
   transform,
 });
