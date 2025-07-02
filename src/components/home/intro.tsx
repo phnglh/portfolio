@@ -86,16 +86,16 @@ export default function Intro() {
                 className="block rounded-lg w-36 rotate-3 group-hover:rotate-0 group-hover:scale-110 scale-3d transition-transform duration-200"
               />
             </motion.div>
-            <div className="max-w-2xl lg:hidden">
+            <motion.div className="max-w-2xl lg:hidden">
               <h2 className="text-3xl italic">Hello,</h2>
               <p className="text-xl ">
-                My name is <em>Phong "Henry" Le Hong</em>.
+                My name is <em>Phong &ldquo;Henry&quot; Le Hong</em>.
                 <br />
                 <span className="text-primary/60">
                   Man proposes god deposes
                 </span>
               </p>
-            </div>
+            </motion.div>
             <div className="max-w-2xl hidden lg:block">
               <motion.h2
                 initial={{ x: 20, opacity: 0 }}
