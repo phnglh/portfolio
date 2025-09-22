@@ -1,11 +1,12 @@
-import { allTils, allNotes, allBlogs } from 'content-collections';
+import { allTils, allNotes, allBlogs, allLeetcodes } from 'content-collections';
 
-type PostType = 'til' | 'note' | 'blog';
+type PostType = 'til' | 'note' | 'blog' | 'leetcode'
 
 export type Post = (
   | (typeof allTils)[number]
   | (typeof allNotes)[number]
   | (typeof allBlogs)[number]
+  | (typeof allLeetcodes)[number]
 ) & {
   type: PostType;
 };

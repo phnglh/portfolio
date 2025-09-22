@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 import { setRequestLocale } from '@stackhub/i18n/server';
-import { allTils } from 'content-collections';
+import { allLeetcodes } from 'content-collections';
 import { notFound } from 'next/navigation';
 
 import { SITE_URL } from '@/libs/constants';
@@ -8,7 +8,7 @@ import { getLocalizedPath } from '@/utils/get-localized-path';
 
 import PageTitle from '@/components/page-title';
 import Mdx from '@/components/mdx/mdx';
-import Providers from '../../../../../components/content-provider';
+import Providers from '@/components/content-provider';
 
 type PageProps = {
   params: Promise<{
@@ -22,7 +22,7 @@ export const generateStaticParams = (): Array<{
   slug: string;
   locale: string;
 }> => {
-  return allTils.map((til) => ({
+  return allLeetcodes.map((til) => ({
     slug: til.slug,
     locale: til.locale,
   }));
@@ -34,11 +34,11 @@ export const generateMetadata = async (
 ): Promise<Metadata> => {
   const { slug, locale } = await props.params;
 
-  const til = allTils.find((p) => p.slug === slug && p.locale === locale);
+  const leetcode = allLeetcodes.find((p) => p.slug === slug && p.locale === locale);
 
-  if (!til) return {};
+  if (!leetcode) return {};
 
-  const { date, modifiedTime, title, summary } = til;
+  const { date, modifiedTime, title, summary } = leetcode;
 
   const ISOPublishedTime = new Date(date).toISOString();
   const ISOModifiedTime = new Date(modifiedTime).toISOString();
@@ -68,18 +68,18 @@ const Page = async (props: PageProps) => {
   const { slug, locale } = await props.params;
   setRequestLocale(locale);
 
-  const til = allTils.find((p) => p.slug === slug && p.locale === locale);
+  const leetcode = allLeetcodes.find((p) => p.slug === slug && p.locale === locale);
 
-  if (!til) {
+  if (!leetcode) {
     notFound();
   }
 
-  const { title, summary, code } = til;
+  const { title, summary, code } = leetcode;
 
   return (
     <>
       <PageTitle title={title} description={summary} />
-      <Providers post={til}>
+      <Providers post={leetcode}>
         <div className="mt-8 flex flex-col justify-between lg:flex-row">
           <article className="w-full">
             <Mdx code={code} />

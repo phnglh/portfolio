@@ -15,7 +15,6 @@ const components = {
   h6: (props: React.ComponentProps<'h6'>) => <Heading as="h6" {...props} />,
   a: (props: React.ComponentProps<'a'>) => {
     const { children, ...rest } = props;
-
     return (
       <Link
         className="hover:text-foreground text-anchor no-underline transition-colors"
@@ -25,6 +24,29 @@ const components = {
       </Link>
     );
   },
+  code: ({
+    className,
+    children,
+    ...props
+  }: React.ComponentPropsWithoutRef<"code">) => {
+    return (
+      <code
+        className={`rounded-md bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 px-1.5 py-0.5 font-mono text-sm ${
+          className || ""
+        }`}
+        {...props}
+      >
+        {children}
+      </code>
+    );
+  },
+
+  pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
+    <pre
+      className=" bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 p-4 overflow-x-auto"
+      {...props}
+    />
+  ),
 };
 
 const Mdx = (props: MdxProps) => {
@@ -32,7 +54,7 @@ const Mdx = (props: MdxProps) => {
   const MDXContent = useMDXComponent(code);
 
   return (
-    <div className="prose w-full">
+    <div className="prose w-full max-w-none">
       <MDXContent components={components} />
     </div>
   );

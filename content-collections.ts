@@ -96,6 +96,25 @@ const blog = defineCollection({
   transform,
 });
 
+const leetcode = defineCollection({
+  name: "leetcode",
+  directory: "src/content/leetcode",
+  include: "**/*.mdx",
+  schema: (z) => ({
+    title: z.string(),
+    date: z.string(),
+    modifiedTime: z.string(),
+    summary: z.string(),
+    imageUrl: z.string().optional(),
+    tags: z.array(z.string()),
+    illustration: z.string().optional(),
+    color: z.string().optional(),
+    excerpt:z.string().optional(), 
+  }),
+  transform,
+});
+
+
 export default defineConfig({
-  collections: [pages,til,note, blog],
+  collections: [pages,til,note, blog, leetcode],
 });

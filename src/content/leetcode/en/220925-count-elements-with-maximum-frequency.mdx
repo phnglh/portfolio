@@ -1,0 +1,122 @@
+---
+
+title: Leetcode 3005 — Count Elements With Maximum Frequency
+summary: Return the total number of elements that belong to the values with the highest frequency in an array.
+date: 2025-09-22T21:00:00Z
+illustration: ""
+modifiedTime: 2025-09-22T21:00:00Z
+tags: [array, hashmap, frequency]
+---
+
+## Problem
+
+Given an integer array `nums`, return the total number of elements that belong to the values with the **highest frequency**.
+
+**Example 1:**
+
+```
+ Input: nums = [1,2,2,3,1,4]
+  Output: 4
+  Explanation:
+  - 1 appears twice
+  - 2 appears twice
+  Maximum frequency = 2
+  Total elements = 2 + 2 = 4
+```
+
+**Example 2:**
+
+```
+Input: nums = [1,2,3,4,5]
+Output: 5
+Explanation:
+All numbers appear once. Maximum frequency = 1. Total = 5.
+```
+
+---
+
+## Approach
+
+1. Count the frequency of each number using a hashmap (`Map` in JavaScript).
+2. Find the maximum frequency.
+3. Add up all occurrences equal to this maximum.
+
+---
+
+## Complexity
+
+* **Time Complexity:** O(n), where n is the length of `nums`.
+* **Space Complexity:** O(k), where k is the number of distinct values in `nums`.
+
+---
+
+## JavaScript Solution
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var countElementsWithMaximumFrequency = function(nums) {
+  const freq = new Map();
+
+  for (const x of nums) {
+    freq.set(x, (freq.get(x) || 0) + 1);
+  }
+
+  let maxFreq = 0;
+  for (const v of freq.values()) {
+    maxFreq = Math.max(maxFreq, v);
+  }
+
+  let result = 0;
+  for (const v of freq.values()) {
+    if (v === maxFreq) result += v;
+  }
+
+  return result;
+};
+```
+
+## Java Solution
+```java
+
+import java.util.HashMap;
+import java.util.Map;
+
+class Solution {
+    public int maxFrequencyElements(int[] nums) {
+        Map<Integer, Integer> freq = new HashMap<>();
+        int maxFreq = 0;
+
+        // Count frequencies
+        for (int num : nums) {
+            int count = freq.getOrDefault(num, 0) + 1;
+            freq.put(num, count);
+            maxFreq = Math.max(maxFreq, count);
+        }
+
+        // Sum up all numbers with max frequency
+        int total = 0;
+        for (int count : freq.values()) {
+            if (count == maxFreq) {
+                total += count;
+            }
+        }
+
+        return total;
+    }
+}
+```
+
+---
+
+## Insight
+
+The answer is **not** the number of distinct values with maximum frequency, but the **total number of elements** belonging to them.
+
+---
+
+Source:
+
+* [LeetCode 3005. Count Elements With Maximum Frequency](https://leetcode.com/problems/count-elements-with-maximum-frequency/)

@@ -2,7 +2,7 @@
 
 import type { Til } from 'content-collections';
 
-import { TilProvider } from '@/contexts/til';
+import { ContentProvider } from '@/contexts/content';
 
 type ProvidersProps = {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ type ProvidersProps = {
 const Providers = (props: ProvidersProps) => {
   const { children, post } = props;
 
-  return <TilProvider value={post}>{children}</TilProvider>;
+  return <ContentProvider value={post}>{children}</ContentProvider>;
 };
 
 export default Providers;

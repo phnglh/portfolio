@@ -2,6 +2,13 @@
   "common": {
     "cancel": "Cancel"
   },
+  "component": {
+		"list-blog-posts": {
+			"no-posts-found": "No posts found",
+			"placeholder": "Search articles"
+		},
+		"go-to-homepage": "Go to homepage"
+	},
   "error": {
     "something-went-wrong": "Something went wrong!",
     "try-again": "Try again"
@@ -24,7 +31,7 @@
     "about": "About",
     "about-us": "About Us",
     "blog": "Blog",
-    "bookmark": "Bookmark",
+    "leetcode": "Leetcode",
     "careers": "Careers",
     "change-language": "Change language",
     "company": "Company",
@@ -49,6 +56,10 @@
   "til": {
     "description": "A log of small wins and technical insights — quick notes from real-world development.",
     "title": "Today I Learn"
+  },
+  "leetcode": {
+   "description": "A log of small wins and technical insights — quick notes from real-world development.",
+    "title": "Today I Learn" 
   },
   "theme-toggle": {
 		"options": {

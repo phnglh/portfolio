@@ -24,8 +24,8 @@ export const HEADER_LINKS = [
   },
   {
     icon: <Bookmark className="size-3.5" />,
-    href: '/bookmark',
-    key: 'bookmark',
+    href: '/leetcode',
+    key: 'leetcode',
   },
   {
     icon: <NewspaperIcon className="size-3.5" />,
