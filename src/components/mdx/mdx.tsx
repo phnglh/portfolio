@@ -2,6 +2,7 @@ import { useMDXComponent } from '@content-collections/mdx/react';
 import React from 'react';
 import Heading from './heading';
 import Link from './link';
+import { CodeBlock } from './code-block';
 
 type MdxProps = {
   code: string;
@@ -24,26 +25,25 @@ const components = {
       </Link>
     );
   },
-  code: ({
-    className,
-    children,
-    ...props
-  }: React.ComponentPropsWithoutRef<"code">) => {
-    return (
-      <code
-        className={`rounded-md bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 px-1.5 py-0.5 font-mono text-sm ${
-          className || ""
-        }`}
-        {...props}
-      >
-        {children}
-      </code>
-    );
-  },
+  code: (props: React.ComponentPropsWithoutRef<"code">) => {
+  const { className, children } = props;
+  const lang = className?.replace("language-", "") || undefined;
 
+  if (!lang) {
+    return (
+      <>
+        {children}
+      </>
+    );
+  }
+
+  return (
+    <CodeBlock code={String(children).trim()}  />
+  );
+  },
   pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
     <pre
-      className=" bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 p-4 overflow-x-auto"
+    className='not-prose'
       {...props}
     />
   ),

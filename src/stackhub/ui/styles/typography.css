@@ -37,6 +37,18 @@
     }
   }
 
+   :where(pre):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+    border: none;
+    padding: 0; 
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    
+    code {
+      border: none !important;
+      padding: 0 !important;
+    }
+  }
+
   :where(blockquote):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
     font-style: normal;
 
