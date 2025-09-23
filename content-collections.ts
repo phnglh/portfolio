@@ -106,6 +106,7 @@ const leetcode = defineCollection({
     modifiedTime: z.string(),
     summary: z.string(),
     imageUrl: z.string().optional(),
+    series: z.array(z.string()),
     tags: z.array(z.string()),
     illustration: z.string().optional(),
     color: z.string().optional(),

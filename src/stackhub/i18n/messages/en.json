@@ -3,35 +3,34 @@
     "cancel": "Cancel"
   },
   "component": {
-		"list-blog-posts": {
-			"no-posts-found": "No posts found",
-			"placeholder": "Search articles"
-		},
-		"go-to-homepage": "Go to homepage"
-	},
+    "go-to-homepage": "Go to homepage",
+    "list-blog-posts": {
+      "no-posts-found": "No posts found",
+      "placeholder": "Search articles"
+    }
+  },
   "error": {
     "something-went-wrong": "Something went wrong!",
     "try-again": "Try again"
   },
   "homepage": {
     "about": "Go to the about page",
-    "title": "Hello world!",
     "intro": {
-			"fast": "Fast",
-			"scalable": "Scalable",
-			"maintainable": "Maintainable",
-			"stunning": "Stunning",
-			"title-bottom": "with cutting-edge tech.",
-			"title-middle-left": "building",
-			"title-middle-right": "web solutions",
-			"title-top": "My name is <em>Le Hong Phong</em>."
-		}
+      "fast": "Fast",
+      "maintainable": "Maintainable",
+      "scalable": "Scalable",
+      "stunning": "Stunning",
+      "title-bottom": "with cutting-edge tech.",
+      "title-middle-left": "building",
+      "title-middle-right": "web solutions",
+      "title-top": "My name is <em>Le Hong Phong</em>."
+    },
+    "title": "Hello world!"
   },
   "layout": {
     "about": "About",
     "about-us": "About Us",
     "blog": "Blog",
-    "leetcode": "Leetcode",
     "careers": "Careers",
     "change-language": "Change language",
     "company": "Company",
@@ -41,9 +40,14 @@
     "github": "GitHub",
     "home": "Home",
     "instagram": "Instagram",
+    "leetcode": "Leetcode",
     "skip-to-main-content": "Skip to main content",
     "social": "Social",
     "til": "Til"
+  },
+  "leetcode": {
+    "description": "A log of small wins and technical insights — quick notes from real-world development.",
+    "title": "Today I Learn"
   },
   "mdx": {
     "link-to-section": "link-to-section"
@@ -53,20 +57,16 @@
     "site-title": "phnglh.bio"
   },
   "not-found": "Page Not Found!",
+  "theme-toggle": {
+    "options": {
+      "dark": "Dark",
+      "light": "Light",
+      "system": "System"
+    },
+    "toggle-theme": "Toggle theme"
+  },
   "til": {
     "description": "A log of small wins and technical insights — quick notes from real-world development.",
     "title": "Today I Learn"
-  },
-  "leetcode": {
-   "description": "A log of small wins and technical insights — quick notes from real-world development.",
-    "title": "Today I Learn" 
-  },
-  "theme-toggle": {
-		"options": {
-			"dark": "Dark",
-			"light": "Light",
-			"system": "System"
-		},
-		"toggle-theme": "Toggle theme"
-	}
+  }
 }

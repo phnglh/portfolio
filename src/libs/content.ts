@@ -15,6 +15,11 @@ export function getAllPosts(locale: string): Post[] {
   const tilPosts = allTils
     .filter((post) => post.locale === locale)
     .map((post) => ({ ...post, type: 'til' as const }));
+
+  const leetcodePost = allLeetcodes
+    .filter((post) => post.locale === locale)
+    .map((post) => ({ ...post, type: 'leetcode' as const }));
+
   const blogPosts = allBlogs
     .filter((post) => post.locale === locale)
     .map((post) => ({ ...post, type: 'blog' as const }));
@@ -23,7 +28,7 @@ export function getAllPosts(locale: string): Post[] {
     .filter((post) => post.locale === locale)
     .map((post) => ({ ...post, type: 'note' as const }));
 
-  return [...tilPosts, ...notePosts, ...blogPosts].sort((a, b) => {
+  return [...tilPosts, ...notePosts, ...blogPosts, ...leetcodePost].sort((a, b) => {
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
     return dateB.getTime() - dateA.getTime();

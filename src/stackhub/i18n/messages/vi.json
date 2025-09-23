@@ -8,50 +8,50 @@
   },
   "homepage": {
     "about": "Đi đến trang giới thiệu",
-    "title": "Xin chào thế giới!",
     "intro": {
-			"fast": "Fast",
-			"scalable": "Scalable",
-			"maintainable": "Maintainable",
-			"stunning": "Stunning",
-			"title-bottom": "with cutting-edge tech.",
-			"title-middle-left": "building",
-			"title-middle-right": "web solutions",
-			"title-top": "My name is <em>Le Hong Phong</em>."
-		}
+      "fast": "Fast",
+      "maintainable": "Maintainable",
+      "scalable": "Scalable",
+      "stunning": "Stunning",
+      "title-bottom": "with cutting-edge tech.",
+      "title-middle-left": "building",
+      "title-middle-right": "web solutions",
+      "title-top": "My name is <em>Le Hong Phong</em>."
+    },
+    "title": "Xin chào thế giới!"
   },
   "layout": {
     "about": "Giới thiệu",
-    "blog": "Blog",
-    "bookmark": "Đánh dấu",
-    "home": "Trang chủ",
-    "skip-to-main-content": "Bỏ qua để vào nội dung chính",
-    "til": "Hôm nay tôi học được",
-    "change-language": "change-language",
     "about-us": "About Us",
+    "blog": "Blog",
     "careers": "Careers",
+    "change-language": "change-language",
+    "company": "Company",
     "contact": "Contact",
     "facebook": "Facebook",
-    "instagram": "Instagram",
-    "github": "GitHub",
     "general": "General",
+    "github": "GitHub",
+    "home": "Trang chủ",
+    "instagram": "Instagram",
+    "leetcode": "Leetcode",
+    "skip-to-main-content": "Bỏ qua để vào nội dung chính",
     "social": "Social",
-    "company": "Company"
+    "til": "Hôm nay tôi học được"
+  },
+  "mdx": {
+    "link-to-section": "link-to-section"
   },
   "metadata": {
     "site-description": "lorem",
     "site-title": "Stack Hub"
   },
   "not-found": "Không tìm thấy trang!",
-  "mdx": {
-    "link-to-section": "link-to-section"
-  },
-   "theme-toggle": {
-		"options": {
-			"dark": "Dark",
-			"light": "Light",
-			"system": "System"
-		},
-		"toggle-theme": "Toggle theme"
-	}
+  "theme-toggle": {
+    "options": {
+      "dark": "Dark",
+      "light": "Light",
+      "system": "System"
+    },
+    "toggle-theme": "Toggle theme"
+  }
 }
